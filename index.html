@@ -56,7 +56,6 @@
             top: 100%;
             left: 0;
             width: 100%;
-            background-color: white;
             z-index: 1000;
         }
 
@@ -86,6 +85,10 @@
 
         .botao-menu:hover {
             color: #0066ff;
+        }
+
+        .botao-menu.toggled::before {
+            content: '✖';
         }
 
         .hidden {
@@ -132,6 +135,12 @@
             }
         }
 
+        @media (max-width: 768px) {
+            .rodape h4 {
+                display: none;
+            }
+        }
+
         @media (min-width: 768px) and (max-width: 1018px) {
             .navegacao {
                 font-size: 1em;
@@ -163,14 +172,14 @@
                                 onclick="showForm('form-contato')">Dados de contato</a></li>
                         <li class="list-group-item d-flex align-items-center justify-content-center py-4"><a href="#"
                                 class="text-decoration-none" data-target="documento"
-                                onclick="showForm('form-documento')">Documento</a></li>
+                                onclick="showForm('form-area')">Área</a></li>
                         <li class="list-group-item d-flex align-items-center justify-content-center py-4"><a href="#"
-                                class="text-decoration-none" data-target="area" onclick="showForm('form-area')">Área</a>
+                                class="text-decoration-none" data-target="area" onclick="showForm('form-documento')">Documentos</a>
                         </li>
                     </ul>
                 </div>
                 <div class="col-md-9 col-sm-12 ms-3">
-                    <div id="form-cadastro" class="ps-md-5">
+                    <div id="form-cadastro">
                         <h2 class="section-title d-flex align-items-center justify-content-center mt-5 mb-4">Cadastro
                         </h2>
                         <div class="formulario mb-4">
@@ -237,7 +246,7 @@
                         <button type="submit" class="btn btn-primary mt-3 mb-3" style="width: 95%;">Enviar</button>
                     </div>
 
-                    <div id="form-contato" class="hidden ps-md-5">
+                    <div id="form-contato" class="hidden">
                         <h2 class="section-title d-flex align-items-center justify-content-center mt-5 mb-4">Dados de
                             Contato</h2>
                         <div class="formulario mb-4">
@@ -285,28 +294,7 @@
                         <button type="submit" class="btn btn-primary mt-3 mb-3" style="width: 95%;">Enviar</button>
                     </div>
 
-                    <div id="form-documento" class="hidden ps-md-5">
-                        <h2 class="section-title d-flex align-items-center justify-content-center mt-5 mb-4">Documentos
-                        </h2>
-                        <div class="formulario mb-4">
-                            <label for="rg" class="form-label">RG</label>
-                            <input type="text" class="form-control custom-focus" style="width: 95%;" id="rg"
-                                placeholder="Digite seu RG">
-                        </div>
-                        <div class="formulario mb-4">
-                            <label for="cpf" class="form-label">CPF</label>
-                            <input type="text" class="form-control custom-focus" style="width: 95%;" id="cpf"
-                                placeholder="Digite seu CPF">
-                        </div>
-                        <div class="formulario mb-4">
-                            <label for="tituloEleitor" class="form-label">Título de Eleitor</label>
-                            <input type="text" class="form-control custom-focus" style="width: 95%;" id="tituloEleitor"
-                                placeholder="Digite seu título de eleitor">
-                        </div>
-                        <button type="submit" class="btn btn-primary mt-3 mb-3" style="width: 95%;">Enviar</button>
-                    </div>
-
-                    <div id="form-area" class="hidden ps-md-5">
+                    <div id="form-area" class="hidden">
                         <h2 class="section-title d-flex align-items-center justify-content-center mt-5 mb-4">Área de
                             Interesse</h2>
                         <div class="formulario mb-4">
@@ -331,9 +319,40 @@
                             </select>
                         </div>
                         <div class="formulario mb-4">
-                            <label for="experiencia" class="form-label">Experiência</label>
-                            <textarea class="form-control custom-focus" style="width: 95%;" id="experiencia" rows="3"
+                            <label for="nivelExperiencia" class="form-label">Nível de Experiência</label>
+                            <select id="nivelExperiencia" class="form-select custom-focus" style="width: 95%;">
+                                <option value="" disabled selected>Selecione o nível</option>
+                                <option value="estagio">Estágio</option>
+                                <option value="junior">Júnior</option>
+                                <option value="pleno">Pleno</option>
+                                <option value="senior">Sênior</option>
+                            </select>
+                        </div>
+                        <div class="formulario mb-4">
+                            <label for="descricaoExperiencia" class="form-label">Descrição</label>
+                            <textarea class="form-control custom-focus" style="width: 95%;" id="descricaoExperiencia" rows="5"
                                 placeholder="Descreva sua experiência"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary mt-3 mb-3" style="width: 95%;">Enviar</button>
+                    </div>
+
+                    <div id="form-documento" class="hidden">
+                        <h2 class="section-title d-flex align-items-center justify-content-center mt-5 mb-4">Documentos
+                        </h2>
+                        <div class="formulario mb-4">
+                            <label for="rg" class="form-label">RG</label>
+                            <input type="text" class="form-control custom-focus" style="width: 95%;" id="rg"
+                                placeholder="Digite seu RG">
+                        </div>
+                        <div class="formulario mb-4">
+                            <label for="cpf" class="form-label">CPF</label>
+                            <input type="text" class="form-control custom-focus" style="width: 95%;" id="cpf"
+                                placeholder="Digite seu CPF">
+                        </div>
+                        <div class="formulario mb-4">
+                            <label for="tituloEleitor" class="form-label">Título de Eleitor</label>
+                            <input type="text" class="form-control custom-focus" style="width: 95%;" id="tituloEleitor"
+                                placeholder="Digite seu título de eleitor">
                         </div>
                         <div class="formulario mb-4">
                             <label for="curriculo" class="form-label">Anexe seu Currículo (PDF ou Word)</label>
