@@ -96,9 +96,19 @@
         }
 
         .section-title {
+            font-size: 1.6em;
             font-weight: bold;
             color: #0487D9;
             text-align: center;
+        }
+
+        .formulario input:not([type="radio"]),
+        .formulario select,
+        .formulario textarea {
+            margin-left: auto;
+            margin-right: auto;
+            width: 95%;
+            display: block;
         }
 
         .formulario label {
@@ -141,6 +151,13 @@
                 text-align: center;
             }
 
+            .section-title {
+                display: block;
+                padding-left: 2%;
+                padding-bottom: 3%;
+                text-align: left;
+            }
+
             .rodape h4 {
                 display: none;
             }
@@ -179,25 +196,25 @@
                                 class="text-decoration-none" data-target="documento"
                                 onclick="showForm('form-area')">Área</a></li>
                         <li class="list-group-item d-flex align-items-center justify-content-center py-4"><a href="#"
-                                class="text-decoration-none" data-target="area" onclick="showForm('form-documento')">Documentos</a>
+                                class="text-decoration-none" data-target="area"
+                                onclick="showForm('form-documento')">Documentos</a>
                         </li>
                     </ul>
                 </div>
-                <div class="col-md-9 col-sm-12 ms-3">
+                <div class="col-md-9 col-sm-12">
                     <div id="form-cadastro">
-                        <h2 class="section-title d-flex align-items-center justify-content-center mt-5 mb-4">Cadastro
-                        </h2>
+                        <h2 class="section-title mt-5 mb-3">Cadastro:</h2>
                         <div class="formulario mb-4">
-                            <label for="nome" class="form-label">Nome Completo</label>
+                            <label for="nome" class="form-label ps-2">Nome Completo</label>
                             <input type="text" class="form-control custom-focus mt-0" style="width: 95%;" id="nome"
                                 placeholder="Digite seu nome completo">
                         </div>
                         <div class="formulario mb-4">
-                            <label for="nascimento" class="form-label">Data de Nascimento</label>
+                            <label for="nascimento" class="form-label ps-2">Data de Nascimento</label>
                             <input type="date" class="form-control custom-focus" style="width: 95%;" id="nascimento">
                         </div>
                         <div class="formulario mb-4">
-                            <label for="nacionalidade" class="form-label">Nacionalidade</label>
+                            <label for="nacionalidade" class="form-label ps-2">Nacionalidade</label>
                             <select id="nacionalidade" class="form-select custom-focus" style="width: 95%;">
                                 <option value="" disabled selected>Escolha sua nacionalidade</option>
                                 <option value="brasileira">Brasileira</option>
@@ -210,7 +227,7 @@
                             </select>
                         </div>
                         <div class="formulario mb-4">
-                            <label for="estadoCivil" class="form-label">Estado Civil</label>
+                            <label for="estadoCivil" class="form-label ps-2">Estado Civil</label>
                             <select id="estadoCivil" class="form-select custom-focus" style="width: 95%;">
                                 <option value="" disabled selected>Escolha seu estado civil</option>
                                 <option value="solteiro">Solteiro</option>
@@ -221,7 +238,7 @@
                             </select>
                         </div>
                         <div class="formulario mb-4">
-                            <label for="escolaridade" class="form-label">Escolaridade</label>
+                            <label for="escolaridade" class="form-label ps-2">Escolaridade</label>
                             <select id="escolaridade" class="form-select custom-focus" style="width: 95%;">
                                 <option value="" disabled selected>Escolha sua escolaridade</option>
                                 <option value="ensino-fundamental">Ensino Fundamental</option>
@@ -234,28 +251,28 @@
                             </select>
                         </div>
                         <div class="formulario mb-4">
-                            <label for="sexo" class="form-label mb-3">Sexo</label>
+                            <label for="sexo" class="form-label ps-2 mb-3">Sexo</label>
                             <div class="d-flex">
                                 <div class="form-check">
-                                    <input type="radio" class="form-check-input" name="sexo" id="masculino"
-                                        value="masculino">
-                                    <label class="form-check-label me-4" for="masculino">Masculino</label>
+                                    <input type="radio" class="form-check-input d-flex mx-auto" name="sexo"
+                                        id="masculino" value="masculino">
+                                    <label class="form-check-label mx-2" for="masculino">Masculino</label>
                                 </div>
                                 <div class="form-check">
-                                    <input type="radio" class="form-check-input" name="sexo" id="feminino"
-                                        value="feminino">
-                                    <label class="form-check-label" for="feminino">Feminino</label>
+                                    <input type="radio" class="form-check-input d-flex mx-auto" name="sexo"
+                                        id="feminino" value="feminino">
+                                    <label class="form-check-label mx-2" for="feminino">Feminino</label>
                                 </div>
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-primary mt-3 mb-3" style="width: 95%;">Enviar</button>
+                        <button type="submit" class="btn btn-primary mt-3 d-flex mx-auto justify-content-center"
+                            style="width: 95%;">Enviar</button>
                     </div>
 
                     <div id="form-contato" class="hidden">
-                        <h2 class="section-title d-flex align-items-center justify-content-center mt-5 mb-4">Dados de
-                            Contato</h2>
+                        <h2 class="section-title mt-5 mb-3">Dados de Contato:</h2>
                         <div class="formulario mb-4">
-                            <label for="pais" class="form-label">País</label>
+                            <label for="pais" class="form-label ps-2">País</label>
                             <select id="pais" class="form-select" style="width: 95%;">
                                 <option value="" disabled selected>Escolha um país</option>
                                 <option value="brasil">Brasil</option>
@@ -268,42 +285,42 @@
                             </select>
                         </div>
                         <div class="formulario mb-4">
-                            <label for="telefone" class="form-label">Telefone</label>
+                            <label for="telefone" class="form-label ps-2">Telefone</label>
                             <input type="text" class="form-control custom-focus" style="width: 95%;" id="telefone"
                                 placeholder="Digite seu telefone">
                         </div>
                         <div class="formulario mb-4">
-                            <label for="email" class="form-label">E-mail</label>
+                            <label for="email" class="form-label ps-2">E-mail</label>
                             <input type="email" class="form-control custom-focus" style="width: 95%;" id="email"
                                 placeholder="Digite seu e-mail">
                         </div>
                         <div class="formulario mb-4">
-                            <label for="endereco" class="form-label">Endereço</label>
+                            <label for="endereco" class="form-label ps-2">Endereço</label>
                             <input type="text" class="form-control custom-focus" style="width: 95%;" id="endereco"
                                 placeholder="Digite seu endereço">
                         </div>
                         <div class="formulario mb-4">
-                            <label for="linkedin" class="form-label">LinkedIn</label>
+                            <label for="linkedin" class="form-label ps-2">LinkedIn</label>
                             <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png"
                                 alt="logo-linkedin" class="img-fluid mb-1" width="20px">
                             <input type="url" class="form-control custom-focus" style="width: 95%;" id="linkedin"
                                 placeholder="URL do seu LinkedIn">
                         </div>
                         <div class="formulario mb-4">
-                            <label for="github" class="form-label">GitHub</label>
+                            <label for="github" class="form-label ps-2">GitHub</label>
                             <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="logo-github"
                                 class="img-fluid mb-1" width="20px">
                             <input type="url" class="form-control custom-focus" style="width: 95%;" id="github"
                                 placeholder="URL do seu GitHub">
                         </div>
-                        <button type="submit" class="btn btn-primary mt-3 mb-3" style="width: 95%;">Enviar</button>
+                        <button type="submit" class="btn btn-primary d-flex mx-auto justify-content-center"
+                            style="width: 95%;">Enviar</button>
                     </div>
 
                     <div id="form-area" class="hidden">
-                        <h2 class="section-title d-flex align-items-center justify-content-center mt-5 mb-4">Área de
-                            Interesse</h2>
+                        <h2 class="section-title mt-5 mb-3">Área de Interesse:</h2>
                         <div class="formulario mb-4">
-                            <label for="areaInteresse" class="form-label">Área de Interesse</label>
+                            <label for="areaInteresse" class="form-label ps-2">Área de Interesse</label>
                             <select id="areaInteresse" class="form-select custom-focus" style="width: 95%;">
                                 <option value="" disabled selected>Selecione uma área</option>
                                 <option value="desenvolvimento-web">Desenvolvimento Web</option>
@@ -324,7 +341,7 @@
                             </select>
                         </div>
                         <div class="formulario mb-4">
-                            <label for="nivelExperiencia" class="form-label">Nível de Experiência</label>
+                            <label for="nivelExperiencia" class="form-label ps-2">Nível de Experiência</label>
                             <select id="nivelExperiencia" class="form-select custom-focus" style="width: 95%;">
                                 <option value="" disabled selected>Selecione o nível</option>
                                 <option value="estagio">Estágio</option>
@@ -334,37 +351,38 @@
                             </select>
                         </div>
                         <div class="formulario mb-4">
-                            <label for="descricaoExperiencia" class="form-label">Descrição</label>
-                            <textarea class="form-control custom-focus" style="width: 95%;" id="descricaoExperiencia" rows="5"
-                                placeholder="Descreva sua experiência"></textarea>
+                            <label for="descricaoExperiencia" class="form-label ps-2">Descrição</label>
+                            <textarea class="form-control custom-focus" style="width: 95%;" id="descricaoExperiencia"
+                                rows="5" placeholder="Descreva sua experiência"></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary mt-3 mb-3" style="width: 95%;">Enviar</button>
+                        <button type="submit" class="btn btn-primary d-flex mx-auto justify-content-center"
+                            style="width: 95%;">Enviar</button>
                     </div>
 
                     <div id="form-documento" class="hidden">
-                        <h2 class="section-title d-flex align-items-center justify-content-center mt-5 mb-4">Documentos
-                        </h2>
+                        <h2 class="section-title mt-5 mb-3">Documentos:</h2>
                         <div class="formulario mb-4">
-                            <label for="rg" class="form-label">RG</label>
+                            <label for="rg" class="form-label ps-2">RG</label>
                             <input type="text" class="form-control custom-focus" style="width: 95%;" id="rg"
                                 placeholder="Digite seu RG">
                         </div>
                         <div class="formulario mb-4">
-                            <label for="cpf" class="form-label">CPF</label>
+                            <label for="cpf" class="form-label ps-2">CPF</label>
                             <input type="text" class="form-control custom-focus" style="width: 95%;" id="cpf"
                                 placeholder="Digite seu CPF">
                         </div>
                         <div class="formulario mb-4">
-                            <label for="tituloEleitor" class="form-label">Título de Eleitor</label>
+                            <label for="tituloEleitor" class="form-label ps-2">Título de Eleitor</label>
                             <input type="text" class="form-control custom-focus" style="width: 95%;" id="tituloEleitor"
                                 placeholder="Digite seu título de eleitor">
                         </div>
                         <div class="formulario mb-4">
-                            <label for="curriculo" class="form-label">Anexe seu Currículo (PDF ou Word)</label>
+                            <label for="curriculo" class="form-label ps-2">Anexe seu Currículo (PDF ou Word)</label>
                             <input type="file" class="form-control custom-focus" id="curriculo" accept=".pdf,.doc,.docx"
                                 style="width: 95%;">
                         </div>
-                        <button type="submit" class="btn btn-primary mt-3 mb-3" style="width: 95%;">Enviar</button>
+                        <button type="submit" class="btn btn-primary d-flex mx-auto justify-content-center"
+                            style="width: 95%;">Enviar</button>
                     </div>
                 </div>
             </div>
@@ -373,18 +391,18 @@
     <div class="container-fluid rodape pt-3">
         <div class="row justify-content-center text-center py-2">
             <div class="col-12 col-md-auto d-flex flex-column flex-md-row align-items-center">
+                <h4 class="me-md-5">Contatos:</h4>
                 <div class="d-flex flex-column flex-md-row align-items-center mb-4 mb-md-0">
-                    <h4 class="me-md-4">Contatos:</h4>
-                    <div class="d-flex align-items-center me-md-4">
+                    <div class="d-flex align-items-center me-md-5">
                         <img class="img-fluid me-3" src="https://cdn-icons-png.flaticon.com/512/25/25694.png"
-                            alt="logo-casa" width="30px">
+                            alt="logo-casa" width="40px">
                         <p class="mb-0">Rua Xavier Ramos, 326, Pontal, Maceió, AL</p>
                     </div>
                 </div>
                 <div class="d-flex flex-column flex-md-row align-items-center mb-4 mb-md-0">
                     <div class="d-flex align-items-center me-md-5">
                         <img class="img-fluid me-3" src="https://cdn-icons-png.flaticon.com/512/0/191.png"
-                            alt="logo-celular" width="30px">
+                            alt="logo-celular" width="40px">
                         <p class="mb-0">(82) 98809-4715</p>
                     </div>
                 </div>
@@ -395,7 +413,7 @@
                         <p class="mb-0">curriculodev@gmail.com</p>
                     </div>
                 </div>
-                <div class="d-flex flex-column flex-md-row align-items-center">
+                <div class="d-flex flex-column flex-md-row align-items-center mb-4 mb-md-0">
                     <div class="d-flex align-items-center me-md-5">
                         <img src="https://static.thenounproject.com/png/1837669-200.png" alt="dev-icon"
                             class="img-fluid me-3" width="40px">
