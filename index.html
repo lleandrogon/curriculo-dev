@@ -25,11 +25,8 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            flex-wrap: nowrap;
-            width: 100%;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
         }
 
         .cabecalho h1 {
@@ -54,7 +51,6 @@
             display: none;
             position: relative;
             top: 100%;
-            left: 0;
             width: 100%;
             z-index: 1000;
         }
@@ -62,8 +58,6 @@
         .navegacao.show {
             display: block;
             top: 0;
-            left: 0;
-            width: 100%;
         }
 
         .navegacao a {
@@ -80,15 +74,11 @@
             background-color: transparent;
             font-weight: bolder;
             font-size: 2em;
-            border: #337dec;
+            border: none;
         }
 
         .botao-menu:hover {
             color: #0066ff;
-        }
-
-        .botao-menu.toggled::before {
-            content: '✖';
         }
 
         .hidden {
@@ -105,8 +95,7 @@
         .formulario input:not([type="radio"]),
         .formulario select,
         .formulario textarea {
-            margin-left: auto;
-            margin-right: auto;
+            margin: 0 auto;
             width: 95%;
             display: block;
         }
@@ -124,7 +113,6 @@
             background-color: #f8f4f4;
             text-align: center;
             margin-top: auto;
-            width: 100%;
         }
 
         .rodape a {
@@ -147,8 +135,12 @@
 
         @media (max-width: 768px) {
             .cabecalho h1 {
-                font-size: 1em;
+                font-size: 1.1em;
                 text-align: center;
+            }
+
+            .navegacao {
+                font-size: 1.2em;
             }
 
             .section-title {
@@ -177,10 +169,10 @@
         <div class="content pb-5">
             <div class="row">
                 <div class="cabecalho col-12 d-flex align-items-center justify-content-center p-4">
-                    <img class="img-fluid mb-1" src="https://1000logos.net/wp-content/uploads/2020/07/GM-logo.png"
+                    <img class="img-fluid" src="https://1000logos.net/wp-content/uploads/2020/07/GM-logo.png"
                         alt="logo-empresa" style="width: 90px;">
-                    <h1 class="mx-md-4">CURRÍCULO DEV</h1>
-                    <button class="botao-menu btn d-block d-md-none mb-1 me-3" id="menu-toggle">
+                    <h1>CURRÍCULO DEV</h1>
+                    <button class="botao-menu btn d-block d-md-none" id="menu-toggle">
                         ☰
                     </button>
                 </div>
@@ -195,7 +187,7 @@
                         <li class="list-group-item d-flex align-items-center justify-content-center py-4"><a href="#"
                                 class="text-decoration-none" data-target="documento"
                                 onclick="showForm('form-area')">Área</a></li>
-                        <li class="list-group-item d-flex align-items-center justify-content-center py-4"><a href="#"
+                        <li class="list-group-item d-flex align-items-center justify-content-center pt-4"><a href="#"
                                 class="text-decoration-none" data-target="area"
                                 onclick="showForm('form-documento')">Documentos</a>
                         </li>
@@ -203,7 +195,7 @@
                 </div>
                 <div class="col-md-9 col-sm-12">
                     <div id="form-cadastro">
-                        <h2 class="section-title mt-5 mb-3">Cadastro:</h2>
+                        <h2 class="section-title mt-3 mb-2 mt-md-5 mb-md-3">Cadastro:</h2>
                         <div class="formulario mb-4">
                             <label for="nome" class="form-label ps-2">Nome Completo</label>
                             <input type="text" class="form-control custom-focus mt-0" style="width: 95%;" id="nome"
@@ -270,7 +262,7 @@
                     </div>
 
                     <div id="form-contato" class="hidden">
-                        <h2 class="section-title mt-5 mb-3">Dados de Contato:</h2>
+                        <h2 class="section-title mt-3 mb-2 mt-md-5 mb-md-3">Dados de Contato:</h2>
                         <div class="formulario mb-4">
                             <label for="pais" class="form-label ps-2">País</label>
                             <select id="pais" class="form-select" style="width: 95%;">
@@ -318,7 +310,7 @@
                     </div>
 
                     <div id="form-area" class="hidden">
-                        <h2 class="section-title mt-5 mb-3">Área de Interesse:</h2>
+                        <h2 class="section-title mt-3 mb-2 mt-md-5 mb-md-3">Área de Interesse:</h2>
                         <div class="formulario mb-4">
                             <label for="areaInteresse" class="form-label ps-2">Área de Interesse</label>
                             <select id="areaInteresse" class="form-select custom-focus" style="width: 95%;">
@@ -360,7 +352,7 @@
                     </div>
 
                     <div id="form-documento" class="hidden">
-                        <h2 class="section-title mt-5 mb-3">Documentos:</h2>
+                        <h2 class="section-title mt-3 mb-2 mt-md-5 mb-md-3">Documentos:</h2>
                         <div class="formulario mb-4">
                             <label for="rg" class="form-label ps-2">RG</label>
                             <input type="text" class="form-control custom-focus" style="width: 95%;" id="rg"
